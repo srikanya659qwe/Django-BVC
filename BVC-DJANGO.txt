@@ -1,0 +1,374 @@
+Day Objectives:
+==============
+	- software requirements for django
+		-  python---->3.6.8
+			- python.org/downloads/windows/-->3.6.8
+				- Windows x86-64 executable installer
+		-  django package
+
+			- pip install django
+		-  Editor
+			- sublime text
+				- sublimetext.com/3
+			- vs code
+				- code.visualstudio.com/
+
+20-12-2024
+=========
+- Day Objectives:
+============
+	- Project creation in Django:
+                  ---------------------------------
+		- create a folder with name of  "Django-BVC"
+		- open that folder
+		- for the project creation django provides one command i.e
+			     django-admin startproject projectname
+			ex: django-admin startproject SampleProject
+				
+			- init.py:it is an empty python file
+			- asgi.py:asyncronous server gateway interface
+			- settings.py:we can include all our project settings
+			- wsgi.py:web server gateway interface
+			- urls.py:we can create user-defined urls
+			- manage.py:it is a django server file,without this python file we can't run a django server
+
+
+	- App creatio in Django:
+	-----------------------------
+		- manage.py
+		- cd foldername
+			cd SampleProject
+		- for the App creation django provides one command
+			i.e python manage.py startapp Appname
+			ex: python manage.py startapp SampleApp
+				init.py:it is an empty python file
+				admin.py:it is a django administrative GUI
+				apps.py:it contains entire app information
+				models.py:we can store data base files
+				test.py:it is used to test the testcases
+				views.py:it is a django controller file,it controls both templates and models
+
+How to run Django Server:
+---------------------------------
+	- python manage.py runserver
+		http://127.0.0.1:8000/
+			127.0.0.1--->ip address
+			8000--->port number
+
+
+How to create Django Urls:
+--------------------------------
+	MVT-->User--->request(url format)---->django server--->urls.py--->views
+	urls.py:
+	-------
+	         path(p1,p2,p3)
+	         path('url name/',views.function name,name of the url)
+
+			ex: url-->hello
+	HttpResponse
+
+
+			http://127.0.0.1:8000/url name
+			http://127.0.0.1:8000/hello
+21-12-2024
+----------------
+Day Objectives:
+---------------------
+	- Static Urls
+		
+		path('url name/',views.function name,name of the url)
+
+	- Dynamic Urls
+
+		path('url name/<data type:variable name>/',views.function name,name of the url)
+
+				http://127.0.0.1:8000/dynamic/659
+
+23-12-2024:
+----------------
+	- Day Objectives:
+		- Course Registration
+			engineering.apssdc.in/register
+		- task:
+			http://localhost:8000/dynamic/899/-->int
+			http://localhost:8000/data/xxxx/-->str
+			http://localhost:8000/task/8999/xxx---> int and str
+
+			my rollnumber is :xxxx and my name:xxxx
+
+	- django templates:
+	--------------------------
+		
+		- template:it contains .html files
+
+	- how to create django templates:
+	---------------------------------------------
+		django app folder--->Sample App-->new folder--->templates
+		templates--->newfolder--->SampleApp--->temp.html
+		
+		MVT:
+		-------
+	user--->django server--->urls.py-->views.py--->.html
+
+	views.py--->.html:
+	-------------------------
+		- render(p1,p2,p3)
+		- render(request,'html file location',dictionary)
+		- dictionary:views--->html
+			- key,value pair
+			- syntax:
+				{key:value;}
+
+
+	html structure:---> <html
+	--------------------
+		<doctype>
+		<html>
+		<head>
+			<title></title>
+		</head>
+		<body>
+		</body>
+		</html>
+
+	html tags:
+	-------------
+		- heading tags---> h1 to h6
+		- <p>
+		- <style>
+		- <table>--->rows--->tr
+			 <thead>,<tr>,<th>,<td>,<tbody>
+		- <img>
+		- <link>
+		- <script>
+		- <marquee>
+		- <center>
+		
+	- DTL(Django template language):
+	-------------------------------------------------
+		-  syntax:
+		--------------
+			loops:
+			---------
+				{% for  condition %}
+					
+					{{}}
+				
+				{% endfor %}
+
+			conditional statements:
+			-----------------------------
+				{% if condition %}
+					{{}}
+				{% endif %}
+Day objectives:
+===========
+	- CSS
+	-----------
+		- cascading style sheets
+		- it is used to provide styles on html tags
+		- syntax:
+			property:value;property1:value1..........
+	- Types of CSS:
+	--------------------
+		- inline css(body)
+			- it is used to provide css properties on html tags in same line/single line
+		- internal css(head)
+			- we can provide css properties in head tag
+		- external css
+			- we can create one separate .css file in that we provide css properties on html tags
+
+	- registration form:
+	-----------------------
+		- tag--->form
+		- username
+		- email
+		- mobile number
+		- password
+		- confirm password
+			submit
+
+	
+	- Static file handling:
+	------------------------
+		- static files: we can store .css files,.js file,images,bootstrap files
+		- how to create static static files:
+		---------------------------------------
+			- Sample App--->new folder--->static
+			- static--->newfolder--->css,images
+
+
+	HTTP Request methods:
+	---------------------------------
+		- GET()
+		- POST()---->.html--->form tag
+			--->token--->csrf_token
+Day Objectives:
+----------------------
+	- Bootstrap
+		- online bootstrap
+			- we can copy the both css and js files from the online
+			- syntax:
+				property-value  p1-v1 ....pn-vn
+
+				- getbootstrap.com/
+			- class attribute
+		- offline bootstrap
+
+
+DataBase:           db sqlite---->https://sqlitebrowser.org/dl/
+--------------
+Admin GUI:
+----------------
+	- super user account
+		 - python manage.py migrate
+		 - python manage.py createsuperuser
+
+		engineering.apssdc.in/register
+		
+		program type:workshops
+		program:web development using django 24-25 online
+		course:web technologies
+
+Day objectives:
+--------------------
+	- Model creation in django
+		- model: we can store database files
+		- models.py--->
+		- student database---->class classname
+			- name
+			- rollnum
+			- age
+			- mobile
+			- email
+			- address
+		- Database  data input fields:
+		-------------------------------
+			- CharField
+			- IntegerField---> no need to mention max length
+			- TextField
+			- EmailField
+			- ImageField	
+
+
+		- after completion of model creation we have to perform 2 operations:
+			- makemigrations
+				- it creates one interface file for our db
+				- python manage.py makemigrations
+			- migrate
+				- it converts interface file into table format
+				- python manage.py migrate
+
+
+ORM Queries:(object relational mapping queries)
+-----------------------------------------------------------------
+	- python shell
+		- python manage.py shell
+		- from SampleApp.models import Student 
+
+Data insertion by using ORM:
+-----------------------------------------
+	- save()
+	      query:
+	      ----------
+		data=modelname(column name='value',column 2='value'...........column n='valuen')
+		data.save()
+		data
+
+		ex:data=Student(name='xxx',rollnum='xxxx',age=xx,mobile='xxxxxxx',email='xx@gmail.com',address='xxxx')
+		    data.save()
+		    data
+	- create()
+	      query:
+                       ---------
+		data=modelname.objects.create(name='xxx',rollnum='xxxx',age=xx,mobile='xxxxxxx',email='xx@gmail.com',address='xxxx')
+		data
+
+
+
+Day objectives:
+---------------------
+	- ORM Queries
+		- retrieving
+		- updation
+		- deletion
+	
+Data read(or) retrieve by using ORM:
+--------------------------------------------------
+		- python shell
+			- python manage.py shell
+			- from SampleApp.models import Student 	
+
+		- if you want to read entire data from database
+			- all()
+			       - query:
+			          ---------
+			             obj=modelname.objects.all()
+			       ex: obj=Student.objects.all()
+			             obj
+
+		- if you want to access particular column data
+			         for i in obj:
+				print(i.column name)
+
+		-if you want to specific data record from database
+			- get(id=record no)
+			     modelname.objects.get(id=3)
+			   ex:Student.objects.get(id=3)
+
+		- if you want to duplicate record from database
+			- filter(column name='value')
+			      - modelname.objects.filter(address='vijayawada')
+
+Data updation by using ORM:
+----------------------------------------
+- Specific value updation:
+----------------------------------
+	- first we can fetch the data from database
+		- get()
+		     - info=student.objects.get(id=3)
+		       info
+
+	- update
+		info.age='new_value'
+		info.save()
+		info
+
+
+- all values updation:
+---------------------------
+		- info= modelname.objects.all().update(age=30)
+		  info
+		  
+
+Data deletion by using ORM:
+---------------------------------------
+	- to delete specific record from database
+		- get()
+		       del=Student.objects.get(id=2)
+		       del
+
+      	- delete()
+		del.delete()
+
+
+
+for all records:
+-------------------- 
+	 ob=Student.objects.all().delete()
+	 ob
+
+CRUD Operations:   create read update delete
+--------------------------
+	- insert
+
+	engineering.apssdc.in/register
+
+
+
+
+
+
+
+
+
